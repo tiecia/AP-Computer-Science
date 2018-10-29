@@ -6,8 +6,8 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		exercise10();
-		//bonus();
+		//exercise10();
+		bonus();
 	}
 	
 	public static void printLineOfStars(int number){
@@ -185,7 +185,7 @@ public class Unit2 {
 	}
 	
 	public static void exercise10() {
-		factorial(25); //Works Up to 25.
+		factorial(15); //Works Up to 25.
 	}
 	
 	public static void factorial(long number) {
