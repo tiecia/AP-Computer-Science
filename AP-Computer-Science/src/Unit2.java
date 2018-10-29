@@ -185,13 +185,19 @@ public class Unit2 {
 	}
 	
 	public static void exercise10() {
-		factorial(10);
+		factorial(4);
 	}
 	
-	public static void factorial(int calc) {
-		for(int i = calc; i>=1; i--) {
-			calc = calc * (calc-1);
+	public static void factorial(int number) {
+		int calc = number;
+		for(int i = number; i>1; i--) {
+			calc = calc * (i-1);
 		}
 		System.out.println(calc);
 	}
 }
+
+
+
+
+
