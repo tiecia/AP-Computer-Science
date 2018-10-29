@@ -185,12 +185,12 @@ public class Unit2 {
 	}
 	
 	public static void exercise10() {
-		factorial(4);
+		factorial(25); //Works Up to 25.
 	}
 	
-	public static void factorial(int number) {
-		int calc = number;
-		for(int i = number; i>1; i--) {
+	public static void factorial(long number) {
+		long calc = number;
+		for(long i = number; i>1; i--) {
 			calc = calc * (i-1);
 		}
 		System.out.println(calc);
