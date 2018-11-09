@@ -6,7 +6,7 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		exercise15();
+		exercise13();
 		//bonus();
 	}
 	
@@ -249,8 +249,9 @@ public class Unit2 {
 	public static int addNum() {
 		Scanner parseNum = new Scanner(System.in).useDelimiter(":");
 		int num = 0;
-		while(parseNum.hasNextInt()) {
-			num =+ parseNum.nextInt();
+		while(parseNum.hasNext()) {
+			num += parseNum.nextInt();
+			System.out.println(45);
 		}
 		return num;
 	}
