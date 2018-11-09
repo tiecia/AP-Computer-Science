@@ -6,7 +6,7 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		exercise11();
+		exercise15();
 		//bonus();
 	}
 	
@@ -216,6 +216,134 @@ public class Unit2 {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	public static void exercise12() {
+		System.out.println("Average" + avgNum());
+	}
+	
+	@SuppressWarnings("resource")
+	public static int avgNum() {
+		Scanner parseNum = new Scanner(System.in);
+		int num = 0;
+		int numCount = 0;
+		boolean active = true;
+		while(active) {
+			int input = parseNum.nextInt();
+			if(input >= 0) {
+				num = num + input;
+				numCount++;
+			} else {
+				active = false;
+			}
+		}
+		return num/numCount;
+	}
+	
+	public static void exercise13() {
+		System.out.println(addNum());
+	}
+	
+	@SuppressWarnings("resource")
+	public static int addNum() {
+		Scanner parseNum = new Scanner(System.in).useDelimiter(":");
+		int num = 0;
+		while(parseNum.hasNextInt()) {
+			num =+ parseNum.nextInt();
+		}
+		return num;
+	}
+	
+	public static void exercise14() {
+		int i;
+		double d;
+		char c;
+		float f;
+		long l;
+		short s;
+		
+		i = 10;
+		d = i;
+		i = (int) d;
+		c = '5';
+		i = c;
+		c = (char) i;
+		s = (short) i;
+		l = s;
+		f = i;
+		i = (int) f;
+		d = i;
+		i = (int) d;
+		
+		/*
+		 * You need to cast down whenever you are converting a larger data type to a smaller one
+		 * 
+		 * IF you convert an int to a char you will get the ASCII value of that char
+		 */
+	}
+	
+	public static void exercise15() {
+		if(alphaIndex(":") == -1 && alphaIndex("f") == 5 && alphaIndex("C") == 2) {
+			System.out.println("Correct");
+		}
+	}
+	
+	public static int alphaIndex(String s) {
+		if(s.equals("A") || s.equals("a")) {
+			return 0;
+		} else if(s.equals("B") || s.equals("b")) {
+			return 1;
+		} else if(s.equals("C") || s.equals("c")) {
+			return 2;
+		} else if(s.equals("D") || s.equals("d")) {
+			return 3;
+		} else if(s.equals("E") || s.equals("e")) {
+			return 4;
+		} else if(s.equals("F") || s.equals("f")) {
+			return 5;
+		} else if(s.equals("G") || s.equals("g")) {
+			return 6;
+		} else if(s.equals("H") || s.equals("h")) {
+			return 7;
+		} else if(s.equals("I") || s.equals("i")) {
+			return 8;
+		} else if(s.equals("J") || s.equals("j")) {
+			return 9;
+		} else if(s.equals("K") || s.equals("k")) {
+			return 10;
+		} else if(s.equals("L") || s.equals("l")) {
+			return 11;
+		} else if(s.equals("M") || s.equals("m")) {
+			return 12;
+		} else if(s.equals("N") || s.equals("n")) {
+			return 13;
+		} else if(s.equals("O") || s.equals("o")) {
+			return 14;
+		} else if(s.equals("P") || s.equals("p")) {
+			return 15;
+		} else if(s.equals("Q") || s.equals("q")) {
+			return 16;
+		} else if(s.equals("R") || s.equals("r")) {
+			return 17;
+		} else if(s.equals("S") || s.equals("s")) {
+			return 18;
+		} else if(s.equals("T") || s.equals("t")) {
+			return 19;
+		} else if(s.equals("U") || s.equals("u")) {
+			return 20;
+		} else if(s.equals("V") || s.equals("v")) {
+			return 21;
+		} else if(s.equals("W") || s.equals("w")) {
+			return 22;
+		} else if(s.equals("X") || s.equals("x")) {
+			return 23;
+		} else if(s.equals("Y") || s.equals("y")) {
+			return 24;
+		} else if(s.equals("Z") || s.equals("z")) {
+			return 25;
+		} else {
+			return -1;
 		}
 	}
 }
