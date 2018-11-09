@@ -6,8 +6,8 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		//exercise10();
-		bonus();
+		exercise11();
+		//bonus();
 	}
 	
 	public static void printLineOfStars(int number){
@@ -194,6 +194,29 @@ public class Unit2 {
 			calc = calc * (i-1);
 		}
 		System.out.println(calc);
+	}
+	
+	@SuppressWarnings("resource")
+	public static void exercise11() {
+		System.out.println("Enter Value a: ");
+		Scanner num1 = new Scanner(System.in);
+		int a = num1.nextInt();
+		System.out.println("Enter Value a: ");
+		Scanner num2 = new Scanner(System.in);
+		int b  = num2.nextInt();
+		if(isEven(a) && isEven(b)) {
+			System.out.println("Both are Even");
+		} else {
+			System.out.println("At least 1 is Odd");
+		}
+	}
+	
+	public static boolean isEven(int n){
+		if(n % 2 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 
