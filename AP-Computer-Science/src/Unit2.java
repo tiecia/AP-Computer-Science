@@ -8,7 +8,7 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		exercise16();
+		exercise11();
 		//bonus();
 	}
 	
@@ -203,7 +203,7 @@ public class Unit2 {
 		System.out.println("Enter Value a: ");
 		Scanner num1 = new Scanner(System.in);
 		int a = num1.nextInt();
-		System.out.println("Enter Value a: ");
+		System.out.println("Enter Value b: ");
 		Scanner num2 = new Scanner(System.in);
 		int b  = num2.nextInt();
 		if(isEven(a) && isEven(b)) {
@@ -222,7 +222,7 @@ public class Unit2 {
 	}
 	
 	public static void exercise12() {
-		System.out.println("Average" + avgNum());
+		System.out.println("Average " + avgNum());
 	}
 	
 	@SuppressWarnings("resource")
@@ -349,6 +349,19 @@ public class Unit2 {
 			return 25;
 		} else {
 			return -1;
+		}
+	}
+	
+	public static int alphaIndex2(char s) {
+		String upperAlpha = "A B C D E F G H I G K L M N O P Q R S T U V W X Y Z";
+		String lowerAlpha = "a b c d e f g h i g k l m n o p q r s t u v q x y z";
+		boolean loop = true;
+		int count = 0;
+		while(Character.isLowerCase(s) && loop) {
+			Scanner parse = new Scanner(lowerAlpha);
+			if(parse.hasNext() && !parse.next().equals(s)) {
+				
+			}
 		}
 	}
 	
