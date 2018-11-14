@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,7 +8,7 @@ public class Unit2 {
 	public static void main(String[] args) {
 		//printLineOfStars(3);
 		//myName("This is a String");
-		exercise13();
+		exercise16();
 		//bonus();
 	}
 	
@@ -245,13 +247,15 @@ public class Unit2 {
 		System.out.println(addNum());
 	}
 	
+	
 	@SuppressWarnings("resource")
 	public static int addNum() {
-		Scanner parseNum = new Scanner(System.in).useDelimiter(":");
+		Scanner scanNum = new Scanner(System.in);
+		String input = scanNum.nextLine();
+		Scanner parseNum = new Scanner(input).useDelimiter(":");
 		int num = 0;
 		while(parseNum.hasNext()) {
 			num += parseNum.nextInt();
-			System.out.println(45);
 		}
 		return num;
 	}
@@ -346,6 +350,21 @@ public class Unit2 {
 		} else {
 			return -1;
 		}
+	}
+	
+	public static void exercise16() {
+		System.out.println(moneyFormat(34.557768));
+	}
+	
+	public static double moneyFormat(double input) {
+		double ret = input % .01;
+		if(ret >= .005) {
+			input += ret;
+		} else {
+			input -= ret;
+		}
+		DecimalFormat f = new DecimalFormat(input);
+		return input;
 	}
 }
 
