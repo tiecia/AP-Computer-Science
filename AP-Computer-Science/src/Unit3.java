@@ -25,7 +25,7 @@ public class Unit3 {
 				}
 			}
 			
-			double pers = evenCount/totalCount;
+			double pers = ((double)evenCount/(double)totalCount) * 100;
 			System.out.println("Numbers: " + totalCount);
 			System.out.println("Even Numbers: " + evenCount + "(" + pers +"%)");
 			System.out.println("Sum: " + sum);
