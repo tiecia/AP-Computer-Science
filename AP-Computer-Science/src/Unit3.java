@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Unit3 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		exercise1();
+		exercise2();
 	}
 	
 	public static void exercise1() throws FileNotFoundException {
@@ -39,6 +39,20 @@ public class Unit3 {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	public static void exercise2() throws FileNotFoundException {
+		String file = "Ex3_2_Input.txt";
+		File f = new File(file);
+		Scanner parseFile = new Scanner(f);
+		while(parseFile.hasNextLine()) {
+			String nextLine = parseFile.nextLine();
+			if(/*parseFile.hasNext("/") || parseFile.hasNext("*")*/ nextLine.contains("/") || nextLine.contains("*")) {
+				parseFile.nextLine();
+			} else {
+				System.out.println(parseFile.nextLine());
+			}
 		}
 	}
 }

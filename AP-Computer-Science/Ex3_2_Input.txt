@@ -1,0 +1,19 @@
+
+public class error {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("ome lines of code");
+		System.out.println("have characters in them");
+		System.out.println("which means ");
+		// system.out.println ("written by the programmer.");
+
+		System.out.println("lines can also");
+		System.out.println("have /* and */ characters");
+		/*
+		 * System.out.println("which represents")'" system.out.println
+		 * ("a multi-line style");"
+		 */System.out.println("of comment.");
+	}
+
+}
