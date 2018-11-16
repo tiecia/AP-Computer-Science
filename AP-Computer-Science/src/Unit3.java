@@ -1,11 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Unit3 {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		exercise2();
+	public static void main(String[] args) throws IOException {
+		exercise3();
 	}
 	
 	public static void exercise1() throws FileNotFoundException {
@@ -15,7 +17,7 @@ public class Unit3 {
 			int totalCount = 0;
 			int evenCount = 0;
 			Scanner parseFile = new Scanner(f);
-			int sum = 0; 
+			int sum = 0;
 			while(parseFile.hasNext()) {
 				int number = parseFile.nextInt();
 				sum += number;
@@ -42,17 +44,53 @@ public class Unit3 {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static void exercise2() throws FileNotFoundException {
 		String file = "Ex3_2_Input.txt";
 		File f = new File(file);
-		Scanner parseFile = new Scanner(f);
+		Scanner s = new Scanner(f);
+		while(s.hasNext()) {
+			System.out.println(stripComments(s.nextLine()));
+		}
+	}
+	
+	public static String stripComments(String s) {
+		Scanner parseFile = new Scanner(s);
 		while(parseFile.hasNextLine()) {
-			String nextLine = parseFile.nextLine();
-			if(/*parseFile.hasNext("/") || parseFile.hasNext("*")*/ nextLine.contains("/") || nextLine.contains("*")) {
-				parseFile.nextLine();
-			} else {
-				System.out.println(parseFile.nextLine());
+			String token = parseFile.next();
+			String line = null;
+			if(parseFile.hasNextLine()) {
+				line = parseFile.nextLine();	
 			}
+			
+			if(!(token.contains("/") || token.contains("*"))) {
+				if(line != null) {
+					return token + " " + line;
+				} else {
+					return token;
+				}
+			} else {
+				return " ";
+			}
+		}
+		return "";
+	}
+	
+	public static void exercise3() throws IOException {
+		String inputFilePath = "Ex3_2_Input.txt";
+		String outputFilePath = "Stripped_Output.txt";
+		File inputFile = new File(inputFilePath);
+		File outputFile = new File(outputFilePath);
+		Scanner s = new Scanner(inputFile);
+		if(!outputFile.exists()){
+			outputFile.createNewFile();
+		} else {
+			outputFile.delete();
+			outputFile.createNewFile();
+		}
+		PrintStream p = new PrintStream(outputFile);
+		while(s.hasNext()) {
+			p.println(stripComments(s.nextLine()));
 		}
 	}
 }
