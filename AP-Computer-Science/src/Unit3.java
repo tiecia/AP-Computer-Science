@@ -7,9 +7,12 @@ import java.util.Scanner;
 public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
-		exercise3();
+		//exercise3();
+		//arrayPopulation();
+		arrayTable();
 	}
 	
+	@SuppressWarnings("resource")
 	public static void exercise1() throws FileNotFoundException {
 		String fileName = "textFile.txt";
 		File f = new File(fileName);
@@ -54,6 +57,7 @@ public class Unit3 {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static String stripComments(String s) {
 		Scanner parseFile = new Scanner(s);
 		while(parseFile.hasNextLine()) {
@@ -76,6 +80,7 @@ public class Unit3 {
 		return "";
 	}
 	
+	@SuppressWarnings("resource")
 	public static void exercise3() throws IOException {
 		String inputFilePath = "Ex3_2_Input.txt";
 		String outputFilePath = "Stripped_Output.txt";
@@ -93,4 +98,30 @@ public class Unit3 {
 			p.println(stripComments(s.nextLine()));
 		}
 	}
+	
+	public static void arrayPopulation() {
+		Scanner input = new Scanner(System.in);
+		int values[] = new int[10];
+		int workingIndex = 0;
+		while(input.hasNext() && workingIndex<values.hashCode()) {
+			values[workingIndex] = input.nextInt();
+			workingIndex++;
+		}
+		System.out.println("Array Full");
+	}
+	
+	public static void arrayTable() {
+		System.out.println("Index" + "\t" + "Value");
+		int values[] = {1,5,76,34,89,34,52,78,100,56};
+		for(int counter = 0; counter < values.length; counter++) {
+			System.out.println(counter + "/t" + values[counter]);
+		}
+	}
+	
+	
+	
 }
+
+
+
+
