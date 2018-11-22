@@ -99,6 +99,7 @@ public class Unit3 {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static void arrayPopulation() {
 		Scanner input = new Scanner(System.in);
 		int values[] = new int[10];
@@ -114,7 +115,7 @@ public class Unit3 {
 		System.out.println("Index" + "\t" + "Value");
 		int values[] = {1,5,76,34,89,34,52,78,100,56};
 		for(int counter = 0; counter < values.length; counter++) {
-			System.out.println(counter + "/t" + values[counter]);
+			System.out.println(counter + "\t" + values[counter]);
 		}
 	}
 	
