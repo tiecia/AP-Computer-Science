@@ -25,6 +25,7 @@ public class Unit1 {
 		System.out.println("------------------------------");
 	}
 	
+	@SuppressWarnings("unused")
 	public static void exercise2b() {
 //		int Seniors = 13;
 //		int Juniors = 4;
@@ -89,6 +90,7 @@ public class Unit1 {
 		//System.out.println("                                    ------");
 	}
 	
+	@SuppressWarnings("unused")
 	public static void exercise8() {
 		double pone, ptwo, pthree, pfour, pfive, total, subtotal, add;
 		pone = 5;
