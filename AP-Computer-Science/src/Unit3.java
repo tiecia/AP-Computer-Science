@@ -2,14 +2,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
-		//exercise3();
+		exercise7_1();
 		//arrayPopulation();
-		arrayTable();
+		//arrayTable();
 	}
 	
 	@SuppressWarnings("resource")
@@ -119,8 +120,22 @@ public class Unit3 {
 		}
 	}
 	
-	
-	
+	public static void exercise7_1(){
+		while(true) {
+			Scanner input = new Scanner(System.in);
+			int num = input.nextInt();
+			Random rand = new Random();
+			int [] numOfRoles = new int[6];
+			for(int i = 0; i < num; i++) {
+				int randNum = rand.nextInt(6) + 1;
+				numOfRoles[randNum - 1]++;
+			}
+			System.out.println("Number\tTimes Rolled");
+			for(int i = 0; i < 6; i++) {
+				System.out.println((i+1) + "\t" + numOfRoles[i]);
+			}
+		}
+	}
 }
 
 
