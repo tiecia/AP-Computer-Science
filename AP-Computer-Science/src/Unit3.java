@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
-		exercise7_1();
+		exercise7_2();
 		//arrayPopulation();
 		//arrayTable();
 	}
@@ -133,6 +133,35 @@ public class Unit3 {
 			System.out.println("Number\tTimes Rolled");
 			for(int i = 0; i < 6; i++) {
 				System.out.println((i+1) + "\t" + numOfRoles[i]);
+			}
+		}
+	}
+	
+	public static void exercise7_2() {
+		while(true) {
+			Scanner input = new Scanner(System.in);
+			int num = input.nextInt();
+			Random rand = new Random();
+			int [] numOfRoles1 = new int[6];
+//			System.out.println("\tDie 1");
+			for(int i = 0; i < num; i++) {
+				int randNum = rand.nextInt(6) + 1;
+				numOfRoles1[randNum - 1]++;
+			}
+//			System.out.println("Number\tTimes Rolled");
+//			for(int i = 0; i < 6; i++) {
+//				System.out.println((i+1) + "\t" + numOfRoles1[i]);
+//			}
+			System.out.println();
+			System.out.println();
+			System.out.println("\tDie 1 and 2");
+			for(int i = 0; i < num; i++) {
+				int randNum = rand.nextInt(6) + 1;
+				numOfRoles1[randNum - 1]++;
+			}
+			System.out.println("Number\tTimes Rolled");
+			for(int i = 0; i < 6; i++) {
+				System.out.println((i+1) + "\t" + numOfRoles1[i]);
 			}
 		}
 	}
