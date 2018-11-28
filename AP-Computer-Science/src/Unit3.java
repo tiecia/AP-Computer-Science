@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
-		exercise3();
-		//exercise7_2();
+		//exercise3();
+		exercise7_3();
 		//arrayPopulation();
 		//arrayTable();
 	}
@@ -168,63 +168,15 @@ public class Unit3 {
 	}
 	
 	public static void exercise7_3(){
-		Scanner input = new Scanner(System.in);
-		Scanner scan = new Scanner(input).useDelimiter("");
-		String scanned = scan.next();
-		if(s.equals("A") || s.equals("a")) {
-			return 
-		} else if(s.equals("B") || s.equals("b")) {
-			return 1;
-		} else if(s.equals("C") || s.equals("c")) {
-			return 2;
-		} else if(s.equals("D") || s.equals("d")) {
-			return 3;
-		} else if(s.equals("E") || s.equals("e")) {
-			return 4;
-		} else if(s.equals("F") || s.equals("f")) {
-			return 5;
-		} else if(s.equals("G") || s.equals("g")) {
-			return 6;
-		} else if(s.equals("H") || s.equals("h")) {
-			return 7;
-		} else if(s.equals("I") || s.equals("i")) {
-			return 8;
-		} else if(s.equals("J") || s.equals("j")) {
-			return 9;
-		} else if(s.equals("K") || s.equals("k")) {
-			return 10;
-		} else if(s.equals("L") || s.equals("l")) {
-			return 11;
-		} else if(s.equals("M") || s.equals("m")) {
-			return 12;
-		} else if(s.equals("N") || s.equals("n")) {
-			return 13;
-		} else if(s.equals("O") || s.equals("o")) {
-			return 14;
-		} else if(s.equals("P") || s.equals("p")) {
-			return 15;
-		} else if(s.equals("Q") || s.equals("q")) {
-			return 16;
-		} else if(s.equals("R") || s.equals("r")) {
-			return 17;
-		} else if(s.equals("S") || s.equals("s")) {
-			return 18;
-		} else if(s.equals("T") || s.equals("t")) {
-			return 19;
-		} else if(s.equals("U") || s.equals("u")) {
-			return 20;
-		} else if(s.equals("V") || s.equals("v")) {
-			return 21;
-		} else if(s.equals("W") || s.equals("w")) {
-			return 22;
-		} else if(s.equals("X") || s.equals("x")) {
-			return 23;
-		} else if(s.equals("Y") || s.equals("y")) {
-			return 24;
-		} else if(s.equals("Z") || s.equals("z")) {
-			return 25;
-		} else {
-			return -1;
+		Scanner input = new Scanner(System.in).useDelimiter("");
+		int [] count = new int[26];
+		while(input.hasNext()) {
+			int ascii = input.next().charAt(0);
+			count[ascii-97]++;
+		}
+		System.out.println("Letter\tFrequency");
+		for(int i : count) {
+			System.out.println(x);
 		}
 	}
 }
