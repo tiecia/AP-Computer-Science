@@ -168,15 +168,23 @@ public class Unit3 {
 	}
 	
 	public static void exercise7_3(){
-		Scanner input = new Scanner(System.in).useDelimiter("");
+		Scanner input = new Scanner(System.in);
+		String in = input.nextLine();
+		Scanner parse = new Scanner(in).useDelimiter("");
 		int [] count = new int[26];
-		while(input.hasNext()) {
-			int ascii = input.next().charAt(0);
-			count[ascii-97]++;
+		int ascii = 0;
+		int [] letter = new int[26];
+		while(parse.hasNext()) {
+			ascii = parse.next().charAt(0);
+			letter[ascii - 97] = ascii-97;
+			if(letter[ascii - 97] >= 0) {
+				count[letter[ascii-97]]++;
+			}
 		}
 		System.out.println("Letter\tFrequency");
 		for(int i : count) {
-			System.out.println(x);
+			//System.out.println(i);
+			System.out.println((char)(letter[i]) + "\t" + count[i]);
 		}
 	}
 }
