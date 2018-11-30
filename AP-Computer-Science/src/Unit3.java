@@ -9,7 +9,7 @@ public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
 		//exercise3();
-		exercise7_3();
+		exercise7_4();
 		//arrayPopulation();
 		//arrayTable();
 	}
@@ -189,6 +189,26 @@ public class Unit3 {
 			System.out.println(letter[i] + "\t" + count[i]);
 		}
 		System.out.println("Other\t" + count[26]);
+	}
+	
+	public static void exercise7_4() {
+		int [] nums = {36,12,25,19,46,31,22};
+		int large = 0;
+		int small = 0;
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i] > large) {
+				large = nums[i];
+			}
+		}
+		small = large;
+		for(int i = 0; i< nums.length; i++) {
+			if(nums[i] < small) {
+				small = nums[i];
+			}
+		}
+		System.out.println(large);
+		System.out.println(small);
+		System.out.println((large-small)+1);
 	}
 }
 
