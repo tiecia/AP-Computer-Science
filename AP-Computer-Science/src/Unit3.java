@@ -2,14 +2,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+
 
 public class Unit3 {
 
 	public static void main(String[] args) throws IOException {
 		//exercise3();
-		exercise7_4();
+		exercise7_5();
 		//arrayPopulation();
 		//arrayTable();
 	}
@@ -209,6 +212,26 @@ public class Unit3 {
 		System.out.println(large);
 		System.out.println(small);
 		System.out.println((large-small)+1);
+	}
+	
+	public static void exercise7_5() {
+//		int[] array = new int[10];
+//		for(int i = 0; i<array.length; i++) {
+//			array[i] = i;
+//		}
+		int [] array = {1,2,3,4,5,6,7,8,9,10};
+		Arrays.toString(array);
+		shiftR(array);
+	}
+	
+	public static void shiftR(int [] arr) {
+		Arrays.toString(arr);
+		int [] cachearr = new int [arr.length];
+		for(int i = 1; i < arr.length - 1; i++) {
+			cachearr[i+1] = arr[i];
+		}
+		cachearr[0] = arr[arr.length - 1];
+		Arrays.toString(cachearr);
 	}
 }
 
