@@ -215,23 +215,37 @@ public class Unit3 {
 	}
 	
 	public static void exercise7_5() {
-//		int[] array = new int[10];
-//		for(int i = 0; i<array.length; i++) {
-//			array[i] = i;
-//		}
 		int [] array = {1,2,3,4,5,6,7,8,9,10};
-		Arrays.toString(array);
+		System.out.println(Arrays.toString(array));
 		shiftR(array);
+		System.out.println(Arrays.toString(array));
+		System.out.println();
+		int newarr[] = shiftRNoModify(array);
+		System.out.println(Arrays.toString(newarr));
 	}
 	
-	public static void shiftR(int [] arr) {
-		Arrays.toString(arr);
+	public static void shiftR(int [] array) {
+		int [] cachearr = new int [array.length];
+		for(int i = 0; i < array.length - 1; i++) {
+			cachearr[i+1] = array[i];
+		}
+		cachearr[0] = array[array.length - 1];
+		for(int i = 0; i < cachearr.length; i++) {
+			array[i] = cachearr[i];
+		}
+	}
+	
+	public static int[] shiftRNoModify(int [] arr) {
 		int [] cachearr = new int [arr.length];
-		for(int i = 1; i < arr.length - 1; i++) {
+		for(int i = 0; i < arr.length - 1; i++) {
 			cachearr[i+1] = arr[i];
 		}
 		cachearr[0] = arr[arr.length - 1];
-		Arrays.toString(cachearr);
+		return cachearr;
+	}
+	
+	public static void exercise7_6() {
+		
 	}
 }
 
