@@ -40,6 +40,7 @@ public class TicTacToe {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static boolean xMove(String [][] board, Scanner consoleinput, PrintStream fPrint) {
 		System.out.println();
 		System.out.println("Player X, your move: (e.g. 1,3)");
@@ -71,6 +72,7 @@ public class TicTacToe {
 			return true;
 		}
 	}
+	@SuppressWarnings("resource")
 	public static boolean oMove(String [][] board, Scanner consoleinput, PrintStream fPrint) {
 		System.out.println();
 		System.out.println("Player O, your move: (e.g. 1,3)");
