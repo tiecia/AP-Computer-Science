@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -105,6 +103,7 @@ public class Unit2 {
 		return(last + " " + first);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void exercise6() {
 		Scanner s = new Scanner(System.in);
 		while(s.hasNextLine()) {
@@ -139,6 +138,7 @@ public class Unit2 {
 		System.out.println(print);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void exercise8() {
 		Scanner s = new Scanner(System.in);
 		while(s.hasNextInt()) {
@@ -166,6 +166,7 @@ public class Unit2 {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static void bonus() {
 		boolean inPlay = true;
 		Random rand = new Random();
@@ -260,6 +261,7 @@ public class Unit2 {
 		return num;
 	}
 	
+	@SuppressWarnings("unused")
 	public static void exercise14() {
 		int i;
 		double d;
@@ -352,33 +354,33 @@ public class Unit2 {
 		}
 	}
 	
-	public static int alphaIndex2(char s) {
-		String upperAlpha = "A B C D E F G H I G K L M N O P Q R S T U V W X Y Z";
-		String lowerAlpha = "a b c d e f g h i g k l m n o p q r s t u v q x y z";
-		boolean loop = true;
-		int count = 0;
-		while(Character.isLowerCase(s) && loop) {
-			Scanner parse = new Scanner(lowerAlpha);
-			if(parse.hasNext() && !parse.next().equals(s)) {
-				
-			}
-		}
-	}
-	
-	public static void exercise16() {
-		System.out.println(moneyFormat(34.557768));
-	}
-	
-	public static double moneyFormat(double input) {
-		double ret = input % .01;
-		if(ret >= .005) {
-			input += ret;
-		} else {
-			input -= ret;
-		}
-		DecimalFormat f = new DecimalFormat(input);
-		return input;
-	}
+//	public static int alphaIndex2(char s) {
+//		String upperAlpha = "A B C D E F G H I G K L M N O P Q R S T U V W X Y Z";
+//		String lowerAlpha = "a b c d e f g h i g k l m n o p q r s t u v q x y z";
+//		boolean loop = true;
+//		int count = 0;
+//		while(Character.isLowerCase(s) && loop) {
+//			Scanner parse = new Scanner(lowerAlpha);
+//			if(parse.hasNext() && !parse.next().equals(s)) {
+//				
+//			}
+//		}
+//	}
+//	
+//	public static void exercise16() {
+//		System.out.println(moneyFormat(34.557768));
+//	}
+//	
+//	public static double moneyFormat(double input) {
+//		double ret = input % .01;
+//		if(ret >= .005) {
+//			input += ret;
+//		} else {
+//			input -= ret;
+//		}
+//		DecimalFormat f = new DecimalFormat(input);
+//		return input;
+//	}
 }
 
 

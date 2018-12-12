@@ -1,0 +1,19 @@
+
+public  class error {
+
+public  static void main(String[] args) {
+ 
+System.out.println("ome  lines of code");
+System.out.println("have  characters in them");
+System.out.println("which  means ");
+ 
+
+System.out.println("lines  can also");
+System.out.println("have  /* and */ characters");
+ 
+ 
+ 
+ 
+}
+
+}
