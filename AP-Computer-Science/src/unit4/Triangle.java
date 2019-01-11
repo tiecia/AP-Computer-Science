@@ -1,4 +1,4 @@
-spackage unit4;
+package unit4;
 
 public class Triangle {
 	Point p1 = new Point();
