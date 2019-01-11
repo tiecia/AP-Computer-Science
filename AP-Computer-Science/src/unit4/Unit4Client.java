@@ -12,10 +12,6 @@ public class Unit4Client {
 		p2.setX(4);
 		p2.setY(4);
 		
-		System.out.println(findSlope(p1,p2));
-		System.out.println(findDistance(p1,p2));
-		System.out.println(findMidpoint(p1,p2));
-		
 		Triangle t = new Triangle();
 		
 		t.p1 = p1;
@@ -23,11 +19,25 @@ public class Unit4Client {
 		t.p3.setX(6);
 		t.p3.setY(6);
 		
+		//Client Method Calls
+		System.out.println("Slope: " + findSlope(p1,p2));
+		System.out.println("Distance Between Lines: " + findDistance(p1,p2));
+		System.out.println("Midpoint of Line: " + findMidpoint(p1,p2));
 		System.out.println();
-		System.out.println(findPerm(t));
+		System.out.println("---------------------------");
+		System.out.println();
+		System.out.println("Perm of Triangle: " + findPerm(t));
+		System.out.println();
+		//Point Method Calls
+		System.out.println("---------------------------");
+		System.out.println();
+		System.out.println("Distance to p2: " + p1.distanceTo(t.p2));
+		System.out.println("Slope of Line: " + p1.slopeTo(p2));
+		System.out.println("Midpoint of Line: " + p1.midpointTo(p2));
+		System.out.println("Distance from center: " + p1.distanceFromCenter());
+		System.out.println("Quadrant: " + p1.quadrant());
 		
-		System.out.println(p1.distanceTo(p2));
-		
+		System.out.println(p1.toString());
 	}
 	
 	public static String findSlope(Point p1, Point p2) {

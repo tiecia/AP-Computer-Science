@@ -9,6 +9,10 @@ public class Point {
 		this.x = x;
 		this.y = y;
 	}
+	
+	public Point() {
+		
+	}
 
 	public void setX(int inX) {
 		x = inX;
@@ -35,7 +39,12 @@ public class Point {
 	}
 	
 	public double distanceTo(Point p) {
-		return (Math.sqrt((this.x - p.getX())^2 + (this.y - p.getY())^2));
+		double d = Math.sqrt((this.x - p.getX())^2 + (this.y - p.getY())^2);
+		return d;
+	}
+	
+	public String slopeTo(Point p) {
+		return (p.getY() - y) + "/" + (p.getX() - x);
 	}
 	
 	public Point midpointTo(Point p) {
