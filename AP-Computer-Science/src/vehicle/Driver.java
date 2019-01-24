@@ -17,7 +17,7 @@ public class Driver {
 		
 		v.setSpeed(35);
 		v.getSpeed();
-//		v.openTrunk(); 		These do not work because Vehicle is th superclass of Truck and Car that means it can access any of its own methods but none of its chile methods.
+//		v.openTrunk(); 		These do not work because Vehicle is the superclass of Truck and Car that means it can access any of its own methods but none of its chile methods.
 //		v.closeTrunk();
 		v.turn();
 		v.stop();
