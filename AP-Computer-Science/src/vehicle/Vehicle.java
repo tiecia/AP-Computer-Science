@@ -3,6 +3,11 @@ package vehicle;
 public class Vehicle extends Driver{
 	
 	private int speed;
+	private String plate;
+	
+	public Vehicle(String plate) {
+		this.plate = plate;
+	}
 	
 	public void start() {
 		System.out.println("Started");
@@ -30,5 +35,9 @@ public class Vehicle extends Driver{
 	
 	public void decreaseSpeed(int amount) {
 		this.speed -= amount;
+	}
+	
+	public String getPlate() {
+		return plate;
 	}
 }
