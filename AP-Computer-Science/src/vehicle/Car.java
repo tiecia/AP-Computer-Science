@@ -2,7 +2,6 @@ package vehicle;
 
 public class Car extends Vehicle{
 	
-	@SuppressWarnings("unused")
 	private static int plateCount = 1;
 	
 	public Car() {

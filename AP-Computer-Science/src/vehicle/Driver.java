@@ -46,6 +46,8 @@ public class Driver {
 		
 		System.out.println(c.getPlate());
 		System.out.println(c2.getPlate());
+		
+		t.setSpeed(80);
 
 		
 	}

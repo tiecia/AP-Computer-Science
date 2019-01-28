@@ -16,4 +16,12 @@ public class Truck extends Vehicle {
 	public void closeTailgate() {
 		System.out.println("Tailgate Closed");
 	}
+	
+	public void setSpeed(int speed) {
+		if(speed <= 75) {
+			super.setSpeed(speed);
+		} else {
+			System.out.println("Speed is limited to 75");
+		}
+	}
 }
