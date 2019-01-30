@@ -4,9 +4,25 @@ public class Truck extends Vehicle {
 	
 	private static int plateCount = 2;
 	
+	private int maxSpeed = 60;
+	private int gasMileage = 10;
+	private int weight = 1500;
+	
 	public Truck() {
 		super("T" + plateCount);
 		plateCount+=2;
+	}
+	
+	public int getWeight() {
+		return weight;
+	}
+	
+	public int getGasMileage() {
+		return gasMileage;
+	}
+	
+	public int getMaxSpeed() {
+		return maxSpeed;
 	}
 	
 	public void openTailgate() {

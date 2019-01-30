@@ -1,9 +1,14 @@
 package vehicle;
 
-public class Vehicle extends Driver{
+abstract class Vehicle extends Driver{
 	
 	private int speed;
 	private String plate;
+	
+	
+	abstract int getMaxSpeed();
+	abstract int getGasMileage();
+	abstract int getWeight();
 	
 	public Vehicle(String plate) {
 		this.plate = plate;
