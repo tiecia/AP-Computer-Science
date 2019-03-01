@@ -4,6 +4,10 @@ import java.util.Arrays;
 public class Unit6 {
 
 	public static void main(String[] args) {
+		exercise2();
+	}
+	
+	public static void exercise1() {
 		int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
 		System.out.println(Arrays.toString(arr));
 		for(int i : arr) {
@@ -59,6 +63,22 @@ public class Unit6 {
 		}
 		System.out.println(arrl);
 		System.out.println(arrl.contains(3));
+	}
+	
+	public static void exercise2() {
+		ArrayList<Double> list= new ArrayList<Double>();
+		for(double i = 0.5; i<10; i++) {
+			list.add(i);
+		}
+		doubleList(list);
+	}
+	
+	public static void doubleList(ArrayList<Double> list) {
+		System.out.println(list);
+		for(int i = 0; i<list.size(); i+=2) {
+			list.add(i+1, list.get(i));
+		}
+		System.out.println(list);
 	}
 
 }
