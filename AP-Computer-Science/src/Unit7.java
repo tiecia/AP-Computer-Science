@@ -85,7 +85,7 @@ public class Unit7 {
 		boolean searching = true;
 		while(min<=max) {
 			mid = (min+max)/2;
-			if(list.get(mid).equals(key)) {
+			if(list.get(mid).compareTo(key) == 0 || key.equals(list.get(mid))) {
 				return mid;
 			} if(list.get(mid).charAt(0) < key.charAt(0)) {
 				min = mid + 1;
