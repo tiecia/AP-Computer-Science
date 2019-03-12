@@ -85,14 +85,24 @@ public class Unit7 {
 		boolean searching = true;
 		while(min<=max) {
 			mid = (min+max)/2;
-			if(list.get(mid).compareTo(key) == 0 || key.equals(list.get(mid))) {
+//			System.out.println("Mid: " + list.get(mid));
+//			System.out.println("Key: " + key);
+			if(list.get(mid).compareTo(key) == 0) {
 				return mid;
-			} if(list.get(mid).charAt(0) < key.charAt(0)) {
+			} if(list.get(mid).compareTo(key) < 0) {
 				min = mid + 1;
 			} else {
 				max = mid - 1;
 			}
 		} 
 		return -1;
+	}
+	
+	public static void exercise3() {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+	}
+	
+	public static ArrayList<Integer> selectionSortForward(ArrayList<Integer> list){
+		
 	}
 }
