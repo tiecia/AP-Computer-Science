@@ -1,12 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Unit7 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		exercise2();
+		exercise3();
 	}
 	
 	public static void exercise1() throws FileNotFoundException {
@@ -98,11 +99,60 @@ public class Unit7 {
 		return -1;
 	}
 	
-	public static void exercise3() {
-		ArrayList<Integer> list = new ArrayList<Integer>();
+	public static void exercise3() throws FileNotFoundException {
+		File f = new File("seqsrch.txt");
+		Scanner s = new Scanner(f);
+		ArrayList<Integer> input = new ArrayList<Integer>();
+		while(s.hasNextInt()) {
+			input.add(s.nextInt());
+		}
+		int[] list = new int[input.size()];
+		for(int i = 0; i<list.length; i++) {
+			list[i] = input.get(i);
+		}
+		System.out.println(Arrays.toString(list));
+		System.out.println(Arrays.toString(selectionSortForward(list)));
+		System.out.println(Arrays.toString(selectionSortReverse(list)));
+		
+		File namesf = new File("names.txt");
+		Scanner nameScan = new Scanner(namesf);
+		ArrayList<String> = new ArrayList<String>();
+		while(nameScan.hasNext()) {
+			
+		}
 	}
 	
-	public static ArrayList<Integer> selectionSortForward(ArrayList<Integer> list){
-		
+	public static int[] selectionSortForward(int[] list){
+		boolean searching = true;
+		for(int i = 0; i<list.length-1; i++) {
+			int min = i;
+			searching = true;
+			for(int j = i + 1; j<list.length && searching; j++) {
+				if(list[j] < list[min]) {
+					min = j;
+				}
+			}
+			int temp = list[i];
+			list[i] = list[min];
+			list[min] = temp;
+		}
+		return list;
+	}
+	
+	public static int[] selectionSortReverse(int[] list){
+		boolean searching = true;
+		for(int i = 0; i<list.length-1; i++) {
+			int min = i;
+			searching = true;
+			for(int j = i + 1; j<list.length && searching; j++) {
+				if(list[j] > list[min]) {
+					min = j;
+				}
+			}
+			int temp = list[i];
+			list[i] = list[min];
+			list[min] = temp;
+		}
+		return list;
 	}
 }
