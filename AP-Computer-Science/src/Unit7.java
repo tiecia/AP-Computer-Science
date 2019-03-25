@@ -114,12 +114,19 @@ public class Unit7 {
 		System.out.println(Arrays.toString(selectionSortForward(list)));
 		System.out.println(Arrays.toString(selectionSortReverse(list)));
 		
-		File namesf = new File("names.txt");
+		File namesf = new File("namesearch.txt");
 		Scanner nameScan = new Scanner(namesf);
-		ArrayList<String> = new ArrayList<String>();
+		ArrayList<String> namesList = new ArrayList<String>();
 		while(nameScan.hasNext()) {
-			
+			namesList.add(nameScan.next());
 		}
+		String[] namesArr= new String[namesList.size()];
+		for(int i = 0; i<namesList.size(); i++) {
+			namesArr[i] = namesList.get(i);
+		}
+		System.out.println();
+		System.out.println(Arrays.toString(namesArr));
+		System.out.println(Arrays.toString(selectionSortReverse(namesArr)));
 	}
 	
 	public static int[] selectionSortForward(int[] list){
@@ -150,6 +157,23 @@ public class Unit7 {
 				}
 			}
 			int temp = list[i];
+			list[i] = list[min];
+			list[min] = temp;
+		}
+		return list;
+	}
+	
+	public static String[] selectionSortReverse(String[] list) {
+		boolean searching = true;
+		for(int i = 0; i<list.length-1; i++) {
+			int min = i;
+			searching = true;
+			for(int j = i + 1; j<list.length && searching; j++) {
+				if(list[j].charAt(0) > list[min].charAt(0)) {
+					min = j;
+				}
+			}
+			String temp = list[i];
 			list[i] = list[min];
 			list[min] = temp;
 		}
