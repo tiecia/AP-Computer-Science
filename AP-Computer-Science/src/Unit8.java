@@ -1,16 +1,20 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Unit8 {
 
-	public static void main(String[] args) {
-		exercise1();
+	public static void main(String[] args) throws FileNotFoundException {
+		exercise8();
 //		test();
 	}
 	
 	public static void exercise1(){
-		System.out.println(gcd(100,200));
+		System.out.println(gcd(150,200));
 	}
 	
 	public static int gcd(int a, int b) {
@@ -26,7 +30,7 @@ public class Unit8 {
 	}
 	
 	public static void exercise2() {
-		System.out.println(fib(20));
+		System.out.println(fib(25));
 	}
 	
 	public static int fib(int n) {
@@ -65,6 +69,38 @@ public class Unit8 {
 		} else {
 			return false;
 		}
+	}
+	
+	public static void exercise5() throws FileNotFoundException {
+		File stringFile = new File("namesearch.txt");
+		Scanner stringScanner = new Scanner(stringFile);
+		ArrayList<String> stringList = new ArrayList<String>();
+		while(stringScanner.hasNext()) {
+			stringList.add(stringScanner.next());
+		}
+		System.out.println(stringList);
+		System.out.println("Dennis is stored in index: " + search(stringList, "Dennis"));
+		System.out.println("Cora is stored in index: " + search(stringList, "Cora"));
+		System.out.println("Steve is stored in index: " + search(stringList, "Steve"));
+	}
+	
+	public static int search(List<String> list, String key) throws FileNotFoundException {
+		int min = 0;
+		int max = list.size()-1;
+		int mid;
+		if(min<=max) {
+			mid = (min+max)/2;
+			if(list.get(mid).compareTo(key) == 0) {
+				return mid;
+			} if(list.get(mid).compareTo(key) < 0) {
+				min = mid + 1;
+				return search(list.subList(min, max), key);
+			} else {
+				max = mid - 1;
+				return search(list.subList(min, max), key);
+			}
+		} 
+		return -1;
 	}
 	
 	public static void exercise6() {
